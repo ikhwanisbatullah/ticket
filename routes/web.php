@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 //Route Admin
 
-Route::get('/', function () {
-    return view('masterAdmin');
-});
 Route::get('/index', 'AdminController@index');
 
 Route::get('/admin/login', 'AdminController@login_index');
@@ -51,3 +48,27 @@ Route::post('/admin/dataKonten/konten/tambahKonten', 'KontenWebController@tambah
 Route::post('/admin/dataKonten/konten/ubahKonten', 'KontenWebController@ubah_konten');
 
 Route::get('/admin/dataKonten/konten/hapusKonten/{kd_konten}', 'KontenWebController@hapus_konten');
+
+
+//LEVEL USER PUBLIK
+
+Route::get('/', 'PublicController@index');
+
+Route::get('/article', 'PublicController@article');
+
+Route::get('/career', 'PublicController@career');
+
+Route::get('/contact', 'PublicController@contact');
+
+Route::get('/faq', 'PublicController@faq');
+
+Route::get('/privacy-policy', 'PublicController@privacypolicy');
+
+Route::get('/products-services', 'PublicController@productsservices');
+
+Route::get('/about-us', 'PublicController@aboutus');
+
+
+//LEVEL CUSTOMERS
+
+Route::get('/my-account', 'CustomerController@privacy-policy');
